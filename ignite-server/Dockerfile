@@ -24,14 +24,19 @@ RUN mkdir /home/benchmark
 
 WORKDIR /home/benchmark
 
-
 # Sets java variables.
-ENV JAVA_HOME /opt/jdk7
+ENV JAVA_HOME /opt/jdk/jdk1.7.0_76/
 
 # Checkout benchmark
-#RUN git clone https://github.com/gridgain/yardstick-gridgain.git
+RUN git clone https://github.com/gridgain/yardstick-gridgain.git
 
-#ENTRYPOINT /go/bin/outyet
+# Build benchmark
+WORKDIR /home/benchmark/yardstick-gridgain
 
-# Document that the service listens on port 8080.
-#EXPOSE 8080
+RUN mvn clean package
+
+# Start benchmark server
+./bin/benchmark-manual-servers-start.sh ./config/benchmark.properties
+
+# User place
+ENTRYPOINT /home/benchmark
