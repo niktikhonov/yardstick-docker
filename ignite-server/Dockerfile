@@ -1,24 +1,35 @@
 # Start from a Debian image.
-FROM debian:wheezy
+FROM debian:8
 
 # Install tools.
 RUN apt-get update && apt-get install -y --fix-missing \
-  openjdk-7-jdk \
+  wget \
   maven \
   git
 
-# Sets java variables.
-#ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
+# Intasll Oracle JDK
+RUN mkdir /opt/jdk
+
+RUN wget --header "Cookie: oraclelicense=accept-securebackup-cookie" \
+  http://download.oracle.com/otn-pub/java/jdk/7u76-b13/jdk-7u76-linux-x64.tar.gz
+
+RUN tar -zxf jdk-7u76-linux-x64.tar.gz -C /opt/jdk
+
+RUN update-alternatives --install /usr/bin/java java /opt/jdk/jdk1.7.0_76/bin/java 100
+
+RUN update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk1.7.0_76/bin/javac 100
 
 # Prepare work directory.
-#RUN rm -rf /home/benchmark && mkdir /home/benchmark
+RUN mkdir /home/benchmark
 
-# Set work dir
-#WORKDIR /home/benchmark
+WORKDIR /home/benchmark
+
+
+# Sets java variables.
+ENV JAVA_HOME /opt/jdk7
 
 # Checkout benchmark
 #RUN git clone https://github.com/gridgain/yardstick-gridgain.git
-
 
 #ENTRYPOINT /go/bin/outyet
 
