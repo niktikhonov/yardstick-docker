@@ -23,22 +23,3 @@ RUN update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk1.7.0_76/bin/
 
 # Sets java variables.
 ENV JAVA_HOME /opt/jdk/jdk1.7.0_76/
-
-# Prepare work directory.
-RUN mkdir /home/benchmark
-
-WORKDIR /home/benchmark
-
-# Checkout benchmark.
-RUN git clone https://github.com/gridgain/yardstick-gridgain.git
-
-# Build benchmark.
-WORKDIR /home/benchmark/yardstick-gridgain
-
-RUN mvn clean package
-
-# Start benchmark server
-# ./bin/benchmark-manual-servers-start.sh ./config/benchmark.properties
-
-# User place
-ENTRYPOINT /home/benchmark
