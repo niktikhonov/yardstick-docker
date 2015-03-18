@@ -36,7 +36,7 @@ WORKDIR /home/benchmark/yardstick-gridgain
 RUN mvn clean package
 
 # Start benchmark server
-./bin/benchmark-manual-servers-start.sh ./config/benchmark.properties
+# ./bin/benchmark-manual-servers-start.sh ./config/benchmark.properties
 
 # User place
 ENTRYPOINT /home/benchmark
