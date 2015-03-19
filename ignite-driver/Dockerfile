@@ -22,5 +22,8 @@ WORKDIR /home/benchmark/
 
 RUN rm -rf /home/benchmark/incubator-ignite
 
-# Run ignite server.
-ENTRYPOINT bin/benchmark-manual-drivers-start.sh config/benchmark-docker-atomic.properties
+# Run ignite benchmarks.
+# Copy logs and results to export directory.
+# Container should be run with -v {your dir}:/export
+ENTRYPOINT bin/benchmark-manual-drivers-start.sh config/benchmark-docker-atomic.properties && \
+  cp -R logs* results* /export
