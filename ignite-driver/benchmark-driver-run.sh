@@ -28,7 +28,7 @@ if [ ! -d "$RESULT_PATH" ]; then
 fi
 
 # Pull docker image.
-sudo -S docker pull ntikhonov/yardstick-driver:ignite;
+sudo -S docker pull ntikhonov/yardstick-driver:ignite
 
 # Check exit code.
 if [ $? -ne 0 ]; then
@@ -37,7 +37,7 @@ fi
 
 # Run docker container.
 sudo -S docker run -d --net=host -v "$RESULT_PATH":/export \
-  ntikhonov/yardstick-driver:ignite;
+  ntikhonov/yardstick-driver:ignite
 
 # Check exit code.
 if [ $? -ne 0 ]; then
