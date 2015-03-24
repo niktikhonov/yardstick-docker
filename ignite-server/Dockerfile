@@ -12,7 +12,7 @@ RUN git clone https://git-wip-us.apache.org/repos/asf/incubator-ignite
 # Build benchmark.
 WORKDIR /home/benchmark/incubator-ignite
 
-RUN git checkout ignite-497
+RUN git checkout ignite-497-stick
 
 RUN mvn clean package -Prelease,benchmarks -DskipTests=true -Dmaven.javadoc.skip=true -pl modules/yardstick -am
 

@@ -12,7 +12,7 @@ RUN git clone https://git-wip-us.apache.org/repos/asf/incubator-ignite
 # Build benchmark.
 WORKDIR /home/benchmark/incubator-ignite
 
-RUN git checkout ignite-497
+RUN git checkout ignite-497-stick
 
 RUN mvn clean package -Prelease,benchmarks -DskipTests=true -Dmaven.javadoc.skip=true -pl modules/yardstick -am
 
@@ -26,4 +26,5 @@ RUN rm -rf /home/benchmark/incubator-ignite
 # Copy logs and results to export directory.
 # Container should be run with -v {your dir}:/export
 ENTRYPOINT bin/benchmark-manual-drivers-start.sh config/benchmark-docker-atomic.properties && \
+  while pgrep -u root java > /dev/null; do sleep 1; done && \
   cp -R logs* results* /export
