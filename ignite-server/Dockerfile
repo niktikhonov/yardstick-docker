@@ -23,5 +23,5 @@ WORKDIR /home/benchmark/
 RUN rm -rf /home/benchmark/incubator-ignite
 
 # Run ignite server.
-ENTRYPOINT bin/benchmark-manual-servers-start.sh config/benchmark-docker-atomic.properties \
+ENTRYPOINT bin/benchmark-manual-servers-start.sh config/benchmark-docker.properties \
   &&  while pgrep -u root benchmark-boots > /dev/null; do sleep 1; done
