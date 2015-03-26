@@ -10,5 +10,5 @@ WORKDIR /home/benchmark
 ADD ./benchmark.tar ./
 
 # Run ignite server.
-ENTRYPOINT bin/benchmark-manual-servers-start.sh config/benchmark-ec2.properties \
+ENTRYPOINT  bin/benchmark-manual-servers-start.sh config/benchmark-ec2.properties \
   &&  while pgrep -u root benchmark-boots > /dev/null; do sleep 1; done
