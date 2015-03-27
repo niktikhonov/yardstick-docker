@@ -13,6 +13,10 @@ ADD ./benchmark-prepare.sh ./
 
 ADD ./benchmark-upload.sh ./
 
+RUN chmod +x benchmark-prepare.sh
+
+RUN chmod +x benchmark-upload.sh
+
 # Run hazelcast benchmarks.
 ENTRYPOINT \
   ./benchmark-prepare.sh && \
