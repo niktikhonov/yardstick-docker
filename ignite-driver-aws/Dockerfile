@@ -26,6 +26,10 @@ ADD ./benchmark-prepare.sh ./
 
 ADD ./benchmark-upload.sh ./
 
+ADD chmod +x benchmark-prepare.sh
+
+ADD chmod +x benchmark-upload.sh
+
 # Run ignite benchmarks.
 ENTRYPOINT \
   ./benchmark-prepare.sh && \
