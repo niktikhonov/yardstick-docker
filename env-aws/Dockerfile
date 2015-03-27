@@ -34,3 +34,7 @@ RUN ./configure --prefix=/usr
 RUN make
 
 RUN make install
+
+WORKDIR /home
+
+RUN rm -rf s3fs-1.74
