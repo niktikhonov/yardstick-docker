@@ -9,9 +9,9 @@ on how to run Yardstick benchmarks and how to generate graphs.
 1. Create a local clone of Yardstick Docker repository
 2. The easiest way to run benchmark servers is an executing '[ignite|hz]-server/benchmark-server-run.sh' script which will pull required docker image and run container. Execute this script so many times as servers one need.
 
- $ ignite-server/benchmark-server-run.sh
+    $ ignite-server/benchmark-server-run.sh
 
-  **Another way**
+**Another way**
 
 Pull latest image.
 
@@ -35,9 +35,9 @@ Run container.
 
 3. The easiest way to run benchmark driver is an executing '[ignite|hz]-driver/benchmark-driver-run.sh' script which will pull and start docker image. The script requires one argument which is a directory where results uploaded.
 
- $ ignite-driver/benchmark-driver-run.sh /home/bob/results
+    $ ignite-driver/benchmark-driver-run.sh /home/bob/results
 
-  **Another way**
+**Another way**
 
 Pull latest image.
 
@@ -64,13 +64,13 @@ Run container.
 ## Running Benchmarks in AWS
 ### Using AMI
 The easiest way to run benchmarks in AWS is an using created AMI image.
+
 1. Open the Amazon EC2 console.
 2. From the Amazon EC2 console dashboard, click Launch Instance.
 3. On the Choose an Amazon Machine Image (AMI) page, choose an community AMI and search 'yardstick'.
 ![alt AMI](https://raw.githubusercontent.com/ntikhonov/yardstick-docker/master/img/bench-AMIs.png)
 4. Choose 'yardstick-hazelcast-server-1.0' or 'yardstick-ignite-server-1.0'
-5. On the Choose an Instance Type page, select the hardware configuration and size of the instance to launch.
-Recommend to choose 'c4.4xlarge, c4.2xlarge, c4.xlarge' of instance types.
+5. On the Choose an Instance Type page, select the hardware configuration and size of the instance to launch. Recommend to choose 'c4.4xlarge, c4.2xlarge, c4.xlarge' of instance types.
 6. On the Configure Instance Details page choose number of instances. For more information see
 [amazon documentation.](https://aws.amazon.com/ru/documentation/).
 7. On the Configure Security Group page create or choose security group which has an inbound rule for port 0-65535. For example:
@@ -89,7 +89,9 @@ Recommend to choose 'c4.4xlarge, c4.2xlarge, c4.xlarge' of instance types.
    $ ./start-benchmark-server.sh LKJHDSAHJKHSA ASLKDJSLKDJSAO98790we-werwe my-bucket
 
 After benchmark execution results will be uploaded to ES3 bucket. If bucket contains previous results yet then driver will generate comparative charts.
+
 ![alt AMI](https://raw.githubusercontent.com/ntikhonov/yardstick-docker/master/img/bench-result.png)
+
 ![alt AMI](https://raw.githubusercontent.com/ntikhonov/yardstick-docker/master/img/bench-results.png)
 
 ## Provided Benchmarks
@@ -97,10 +99,10 @@ The following benchmarks are provided:
 
 1. Benchmarks atomic distributed cache put operation
 2. Benchmarks atomic distributed cache put and get operations together
-4. Benchmarks transactional distributed cache put operation
-5. Benchmarks transactional distributed cache put and get operations together
-6. Benchmarks distributed SQL query over cached data
-8. Benchmarks distributed SQL query with simultaneous cache updates
+3. Benchmarks transactional distributed cache put operation
+4. Benchmarks transactional distributed cache put and get operations together
+5. Benchmarks distributed SQL query over cached data
+6. Benchmarks distributed SQL query with simultaneous cache updates
 
 ## License
 Yardstick Docker is available under [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0.html) Open Source license.
