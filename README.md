@@ -11,6 +11,7 @@ on how to run Yardstick benchmarks and how to generate graphs.
 
     $ ignite-server/benchmark-server-run.sh
 
+
 **Another way**
 
 Pull latest image.
@@ -36,6 +37,7 @@ Run container.
 3. The easiest way to run benchmark driver is an executing *ignite-server/benchmark-driver-run.sh* or *hz-server/benchmark-driver-run.sh* script which will pull and start docker image. The script requires one argument which is a directory where results uploaded.
 
     $ ignite-driver/benchmark-driver-run.sh /home/bob/results
+
 
 **Another way**
 
@@ -71,8 +73,7 @@ The easiest way to run benchmarks in AWS is an using created AMI image.
 ![alt AMI](https://raw.githubusercontent.com/ntikhonov/yardstick-docker/master/img/bench-AMIs.png)
 4. Choose *yardstick-hazelcast-server-1.0* or *yardstick-ignite-server-1.0*
 5. On the Choose an Instance Type page, select the hardware configuration and size of the instance to launch. Recommend to choose *c4.4xlarge, c4.2xlarge, c4.xlarge* of instance types.
-6. On the Configure Instance Details page choose number of instances. For more information see
-[amazon documentation.](https://aws.amazon.com/ru/documentation/).
+6. On the Configure Instance Details page choose number of instances. For more information see [amazon documentation.](https://aws.amazon.com/ru/documentation/).
 7. On the Configure Security Group page create or choose security group which has an inbound rule for port 0-65535. For example:
 ![alt AMI](https://raw.githubusercontent.com/ntikhonov/yardstick-docker/master/img/bench-rul.png)
 8. Review and run instance.
@@ -89,7 +90,6 @@ The easiest way to run benchmarks in AWS is an using created AMI image.
     $ ./start-benchmark-server.sh LKJHDSAHJKHSA ASLKDJSLKDJSAO98790we-werwe my-bucket
 
 After benchmark execution results will be uploaded to ES3 bucket. If bucket contains previous results yet then driver will generate comparative charts.
-
 ![alt AMI](https://raw.githubusercontent.com/ntikhonov/yardstick-docker/master/img/bench-result.png)
 ![alt AMI](https://raw.githubusercontent.com/ntikhonov/yardstick-docker/master/img/bench-results.png)
 
