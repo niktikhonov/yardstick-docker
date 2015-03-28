@@ -69,7 +69,7 @@ The easiest way to run benchmarks in AWS is an using created AMI image.
 1. Open the Amazon EC2 console.
 2. From the Amazon EC2 console dashboard, click Launch Instance.
 3. On the Choose an Amazon Machine Image (AMI) page, choose an community AMI and search 'yardstick'.
-![alt AMI](https://raw.github.com/ntikhonov/yardstick-docker/master/img/bench-AMIs.png)
+![alt AMI](https://raw.githubusercontent.com/ntikhonov/yardstick-docker/master/img/bench-AMIs.png)
 4. Choose 'yardstick-hazelcast-server-1.0' or 'yardstick-ignite-server-1.0'
 5. On the Choose an Instance Type page, select the hardware configuration and size of the instance to launch.
 Recommend to choose 'c4.4xlarge, c4.2xlarge, c4.xlarge' of instance types.
