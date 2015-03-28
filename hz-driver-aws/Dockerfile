@@ -1,5 +1,5 @@
 # Start from a Debian image.
-FROM ntikhonov/yardstick-env
+FROM ntikhonov/yardstick-aws
 
 # Prepare work directory.
 RUN mkdir /home/benchmark
