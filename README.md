@@ -90,6 +90,7 @@ The easiest way to run benchmarks in AWS is an using created AMI image.
     $ ./start-benchmark-server.sh LKJHDSAHJKHSA ASLKDJSLKDJSAO98790we-werwe my-bucket
 
 After benchmark execution results will be uploaded to ES3 bucket. If bucket contains previous results yet then driver will generate comparative charts.
+
 ![alt AMI](https://raw.githubusercontent.com/ntikhonov/yardstick-docker/master/img/bench-result.png)
 ![alt AMI](https://raw.githubusercontent.com/ntikhonov/yardstick-docker/master/img/bench-results.png)
 
