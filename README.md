@@ -78,14 +78,14 @@ The easiest way to run benchmarks in AWS is an using created AMI image.
 ![alt AMI](https://raw.githubusercontent.com/ntikhonov/yardstick-docker/master/img/bench-rul.png)
 8. Review and run instance.
 9. Connect to instance. For more information [see.](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html)
-10. Run *./start-benchmark-server.sh* and pass to two arguments: *aws access key* and *aws secret key*. For more information (see.)[http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html]
+10. Run *./start-benchmark-server.sh* and pass to two arguments: *aws access key* and *aws secret key*. For more information [see.](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html)
 
     $ ./start-benchmark-server.sh LKJHDSAHJKHSA ASLKDJSLKDJSAO98790we-werwe
 
 11. Now the instance has a working benchmark server which always starts with instance.
 12. Launch benchmark driver instance by doing followed steps: first steps as 2-3, then choose yardstick-hazelcast-driver-1.0 or yardstick-ignite-driver-1.0 AMI, then as 5-8.
 13. Connect to drive instance. For more information [see.](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html)
-14. Run ./start-benchmark-driver.sh and pass to two mandatory arguments and one optional: *aws access key*, *aws secret key* and ES3 bucket name where will be uploaded benchmark results. Default driver tries upload results to 'yardstick-benchmark' bucket. **ES3 bucket must be exist!**
+14. Run ./start-benchmark-driver.sh and pass to two mandatory arguments and one optional: *aws access key*, *aws secret key* and ES3 bucket name where will be uploaded benchmark results. Default driver tries upload results to *yardstick-benchmark* bucket. **ES3 bucket must be exist!**
 
     $ ./start-benchmark-server.sh LKJHDSAHJKHSA ASLKDJSLKDJSAO98790we-werwe my-bucket
 
