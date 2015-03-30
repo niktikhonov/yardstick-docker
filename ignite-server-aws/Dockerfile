@@ -1,5 +1,5 @@
 # Start from a Debian image.
-FROM ntikhonov/yardstick-env
+FROM apacheignite/yardstick-env
 
 # Prepare work directory.
 RUN mkdir /home/benchmark

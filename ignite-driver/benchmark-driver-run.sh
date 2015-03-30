@@ -28,17 +28,17 @@ if [ ! -d "$RESULT_PATH" ]; then
 fi
 
 # Pull docker image.
-sudo -S docker pull ntikhonov/yardstick-ignite-driver
+sudo -S docker pull apacheignite/yardstick-ignite-driver
 
 # Check exit code.
 if [ $? -ne 0 ]; then
-    echo "Failed. Couldn't pull ntikhonov/yardstick-ignite-driver image from docker hub. Try later."
+    echo "Failed. Couldn't pull apacheignite/yardstick-ignite-driver image from docker hub. Try later."
 fi
 
 # Run docker container.
-sudo -S docker run -d --net=host -v "$RESULT_PATH":/export ntikhonov/yardstick-ignite-driver
+sudo -S docker run -d --net=host -v "$RESULT_PATH":/export apacheignite/yardstick-ignite-driver
 
 # Check exit code.
 if [ $? -ne 0 ]; then
-    echo "Failed. Couldn't run ntikhonov/yardstick-ignite-driver container."
+    echo "Failed. Couldn't run apacheignite/yardstick-ignite-driver container."
 fi

@@ -1,5 +1,5 @@
 # Start from a Debian image.
-FROM ntikhonov/yardstick-env
+FROM apacheignite/yardstick-env
 
 # Install tools.
 RUN apt-get update && apt-get install -y --fix-missing \

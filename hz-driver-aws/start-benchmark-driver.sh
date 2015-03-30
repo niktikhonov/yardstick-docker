@@ -7,12 +7,12 @@ if [ "$#" -ne 2 ]; then
     exit 1
 fi
 
-sudo -S docker pull ntikhonov/yardstick-hz-driver-aws
+sudo -S docker pull apacheignite/yardstick-hz-driver-aws
 
 if [ -z "$3" ]; then
     sudo -S docker run -d --net=host --privileged --restart=always -e AWS_ACCESS_KEY=$1 -e AWS_SECRET_KEY=$2 \
-        ntikhonov/yardstick-hz-driver-aws
+        apacheignite/yardstick-hz-driver-aws
 else
     sudo -S docker run -d --net=host --privileged --restart=always -e AWS_ACCESS_KEY=$1 -e AWS_SECRET_KEY=$2 \
-        -e ES3_BUCKET=$3 ntikhonov/yardstick-hz-driver-aws
+        -e ES3_BUCKET=$3 apacheignite/yardstick-hz-driver-aws
 fi

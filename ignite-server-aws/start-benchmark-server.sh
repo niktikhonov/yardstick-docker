@@ -7,7 +7,7 @@ if [ "$#" -ne 2 ]; then
     exit 1
 fi
 
-sudo -S docker pull ntikhonov/yardstick-ignite-server-aws
+sudo -S docker pull apacheignite/yardstick-ignite-server-aws
 
 sudo -S docker run -d --net=host --restart=always -e AWS_ACCESS_KEY=$1 -e AWS_SECRET_KEY=$2 \
-   ntikhonov/yardstick-ignite-server-aws
+   apacheignite/yardstick-ignite-server-aws
