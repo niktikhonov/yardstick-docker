@@ -4,6 +4,7 @@ FROM debian:8
 # Install tools.
 RUN apt-get update && apt-get install -y --fix-missing \
   wget \
+  dstat \
   maven \
   git
 

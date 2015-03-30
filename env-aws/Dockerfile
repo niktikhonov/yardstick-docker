@@ -27,6 +27,8 @@ RUN wget http://s3fs.googlecode.com/files/s3fs-1.74.tar.gz
 
 RUN tar xvzf s3fs-1.74.tar.gz
 
+RUN rm s3fs-1.74.tar.gz
+
 WORKDIR /home/s3fs-1.74
 
 RUN ./configure --prefix=/usr
