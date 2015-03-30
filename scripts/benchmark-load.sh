@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Clean up a working directory.
-rm -rf  ./*
+rm -rf ./*/
 
 # Check that repo url is set.
 if [ -z ${BENCH_REPO} ]; then
@@ -13,20 +13,20 @@ fi
 # Clone repo and enter.
 git clone ${BENCH_REPO}
 
-cd $(ls)
+cd $(ls -d */)
 
 # Try checkout to specific branch.
-if [ -z ${BENCH_BRANCH} ]; then
+if [ ! -z ${BENCH_BRANCH} ]; then
     echo "Checkout to $BENCH_BRANCH."
 
-    git checkout b "$BENCH_BRANCH"
+    git checkout "$BENCH_BRANCH"
 fi
 
 if [ ! -f config/benchmark.properties ]; then
-    echo "File config/benchmark.properties not found! "
+    echo "File config/benchmark.properties not found!"
 
     exit 1
-if
+fi
 
 # Export benchmark label
 while read p; do
@@ -39,7 +39,7 @@ done < config/benchmark.properties
 mvn clean package
 
 if [ $? -eq 0 ]; then
-    echo "Benchmarks $BENCHMARK_LABEL succeffuly built."
+    echo "$BENCHMARK_LABEL benchmarks succeffuly built."
 else
-    echo "Benchmarks $BENCHMARK_LABEL weren't built."
+    echo "$BENCHMARK_LABEL benchmarks weren't built."
 fi
