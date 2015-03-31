@@ -10,9 +10,9 @@ ADD benchmark-load.sh ./
 
 RUN chmod +x benchmark-load.sh
 
-ADD benchmark-log-server.sh ./
+ADD benchmark-wait.sh ./
 
-RUN chmod +x benchmark-log-server.sh
+RUN chmod +x benchmark-wait.sh
 
 # Run yardstick server.
 ENTRYPOINT \
