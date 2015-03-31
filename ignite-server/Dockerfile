@@ -10,7 +10,7 @@ ADD benchmark-load.sh ./
 
 RUN chmod +x benchmark-load.sh
 
-ADD benchmark-wait-server.sh ./
+ADD benchmark-log-server.sh ./
 
 RUN chmod +x benchmark-log-server.sh
 
