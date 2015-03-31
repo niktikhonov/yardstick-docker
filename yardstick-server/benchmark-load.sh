@@ -43,3 +43,6 @@ if [ $? -eq 0 ]; then
 else
     echo "$BENCHMARK_LABEL benchmarks weren't built."
 fi
+
+# cd to benchmark directory.
+cd $(ls -d */)

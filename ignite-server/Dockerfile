@@ -14,6 +14,8 @@ ADD benchmark-log-server.sh ./
 
 RUN chmod +x benchmark-log-server.sh
 
+ENV BENCH_REPO https://github.com/apacheignite/yardstick-ignite
+
 # Run yardstick server.
 ENTRYPOINT \
   ./benchmark-load.sh && \

@@ -10,12 +10,13 @@ ADD benchmark-load.sh ./
 
 RUN chmod +x benchmark-load.sh
 
-ADD benchmark-wait-server.sh ./
+ADD benchmark-log-server.sh ./
 
-RUN chmod +x benchmark-wait-server.sh
+RUN chmod +x benchmark-log-server.sh
 
 # Run yardstick server.
 ENTRYPOINT \
   ./benchmark-load.sh && \
+  cd $(ls -d */) && \
   bin/benchmark-manual-servers-start.sh && \
-  ./benchmark-wait-server.sh
+  ../benchmark-log-server.sh
