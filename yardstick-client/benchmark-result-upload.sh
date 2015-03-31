@@ -15,7 +15,7 @@ do
 done
 
 # Rename file.
-rename 's/results/${BENCHMARK_LABEL}-results/' results*
+rename "s/results/$BENCHMARK_LABEL-results/" results*
 
 # If remote dir contains benchmark result then will generate compare graph.
 cnt_bench=$(ls /mnt/*-results-* 2>/dev/null | wc -l)
@@ -54,10 +54,10 @@ fi;
 
 echo "Start upload benchmark results to storage."
 
-mv ${BENCHMARK_LABEL}-results-*.tar.gz /mnt
+mv "$BENCHMARK_LABEL"-results-* /mnt
 
 echo "Results uploaded."
 
-rm -rf ${BENCHMARK_LABEL}-results-*
+rm -rf "$BENCHMARK_LABEL"-results-*
 
 rm -rf temp_comp
