@@ -10,6 +10,10 @@ ADD benchmark-load.sh ./
 
 RUN chmod +x benchmark-load.sh
 
+ADD benchmark-result-upload.sh ./
+
+RUN chmod +x benchmark-result-upload.sh
+
 ADD benchmark-wait.sh ./
 
 RUN chmod +x benchmark-wait.sh
