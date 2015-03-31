@@ -8,6 +8,13 @@ if [ ${cnt_bench} == 0 ]; then
     exit 1
 fi
 
+# Export benchmark label
+while read p; do
+    if [[ ${p} == BENCHMARK_LABEL* ]]; then
+        export BENCHMARK_LABEL=$(echo ${p} | sed 's/.*=\(.*\)/\1/')
+    fi
+done < config/benchmark.properties
+
 # Ploat result.
 for file in results-*
 do
