@@ -17,5 +17,6 @@ RUN chmod +x benchmark-log-server.sh
 # Run yardstick server.
 ENTRYPOINT \
   ./benchmark-load.sh && \
+  cd $(ls -d */) && \
   bin/benchmark-manual-servers-start.sh && \
-  ./benchmark-log-server.sh
+  ../benchmark-log-server.sh
