@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Clean up a working directory.
-rm user-data
+rm user-data 2>/dev/null
 rm -rf ./*/
 
 # Check that repo url is set.
