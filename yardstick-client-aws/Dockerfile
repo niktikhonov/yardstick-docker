@@ -32,8 +32,8 @@ ENTRYPOINT \
   AWS_SECRET_KEY=$(./benchmark-user-data.sh AWS_SECRET_KEY) \
   ES3_BUCKET=$(./benchmark-user-data.sh ES3_BUCKET) \
   ./benchmark-s3-init.sh && \
-  BENCH_REPO=$(./benchmark-user-data.sh BENCH_REPO) \
-  BENCH_BRANCH=$(./benchmark-user-data.sh BENCH_BRANCH) \
+  GIT_REPO=$(./benchmark-user-data.sh GIT_REPO) \
+  GIT_BRANCH=$(./benchmark-user-data.sh GIT_BRANCH) \
   ./benchmark-load.sh && \
   cd $(ls -d */) && \
   LOCAL_IP=$(ip addr show dev eth0 | sed -nr 's/.*inet ([^ ]+)\/.*/\1/p') \

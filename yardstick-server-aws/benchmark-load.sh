@@ -1,26 +1,26 @@
 #!/bin/bash
 
 # Clean up a working directory.
-rm user-data 2>/dev/null
+rm home/user-data 2>/dev/null
 rm -rf ./*/
 
 # Check that repo url is set.
-if [ -z ${BENCH_REPO} ]; then
-    echo "Repository is unset. Please set BENCH_REPO variable."
+if [ -z ${GIT_REPO} ]; then
+    echo "Repository is unset. Please set GIT_REPO variable."
 
     exit 1
 fi
 
 # Clone repo and enter.
-git clone ${BENCH_REPO}
+git clone ${GIT_REPO}
 
 cd $(ls -d */)
 
 # Try checkout to specific branch.
-if [ ! -z ${BENCH_BRANCH} ]; then
-    echo "Checkout to $BENCH_BRANCH."
+if [ ! -z ${GIT_BRANCH} ]; then
+    echo "Checkout to $GIT_BRANCH."
 
-    git checkout "$BENCH_BRANCH"
+    git checkout "$GIT_BRANCH"
 fi
 
 if [ ! -f config/benchmark.properties ]; then

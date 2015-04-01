@@ -1,0 +1,7 @@
+*.log
+.idea/
+*.iml
+target/*
+*.jar
+*jar.asc
+*xml.asc
