@@ -8,6 +8,9 @@ RUN apt-get update && apt-get install -y --fix-missing \
   maven \
   git
 
+# Add m2 repo cache.
+ADD m2_repo.tar.gz /root/
+
 # Intasll Oracle JDK.
 RUN mkdir /opt/jdk
 
