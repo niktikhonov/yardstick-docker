@@ -14,6 +14,10 @@ ADD benchmark-log-server.sh ./
 
 RUN chmod +x benchmark-log-server.sh
 
+ADD benchmark-user-data.sh ./
+
+RUN chmod +x benchmark-user-data.sh
+
 # Run hazelcast server.
 ENTRYPOINT \
   BENCH_REPO=$(./benchmark-user-data.sh BENCH_REPO) \
