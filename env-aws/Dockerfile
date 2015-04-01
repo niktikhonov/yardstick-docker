@@ -20,6 +20,9 @@ RUN apt-get update && apt-get install -y --fix-missing \
   pkgconf \
   libssl-dev
 
+# Add m2 repo cache.
+ADD m2_repo.tar.gz /root/
+
 # Intasll s3fs.
 WORKDIR /home
 
