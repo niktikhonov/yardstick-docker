@@ -8,7 +8,7 @@ fi
 
 while read p; do
     if [[ ${p} == $1* ]]; then
-        echo ${p} | sed 's/.*=\(.*\)/\1/'
+        echo ${p} | sed 's/.*=\(.*\)/\1/' | tr -d '\r'
         break
     fi
 done < /home/user-data
