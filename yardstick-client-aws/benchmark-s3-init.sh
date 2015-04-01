@@ -13,9 +13,3 @@ if [ ! -z "$ES3_BUCKET" ]; then
 fi
 
 s3fs $OUT_FOLDER /mnt
-
-# Clear.
-rm -rf logs-*
-rm -rf *result*
-rm -rf work
-rm -rf gc.log
